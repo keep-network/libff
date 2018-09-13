@@ -57,6 +57,12 @@ The library has the following dependencies:
 
 The library has been tested on Linux, but it is compatible with Windows and Mac OS X.
 
+Specifically for OSX, libprocps is not available. Rather do the following:
+
+```
+brew install clang boost gmp cmake
+```
+
 ### Installation
 
 On Ubuntu 14.04 LTS:
@@ -81,6 +87,11 @@ mkdir build && cd build && cmake ..
 Optionally, you can specify the install location by providing the desired install path prefix:
 ```
 cmake .. -DCMAKE_INSTALL_PREFIX=/install/path
+```
+
+NOTE: if on OSX, the following flags must be passed for compatibility reasons:
+```
+cmake -DWITH_PROCPS=OFF -DWITH_SUPERCOP=OFF ..
 ```
 
 Then, to compile and install the library, run this within the build directory:

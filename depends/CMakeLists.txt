@@ -1,6 +1,8 @@
 if(${CURVE} STREQUAL "BN128")
   include_directories(ate-pairing/include)
   include_directories(xbyak)
+  include_directories(mcl/include)
+  include_directories(cybozu/include)
   add_library(
     zm
     STATIC
